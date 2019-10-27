@@ -89,8 +89,8 @@ object shell {
     }
 
   implicit val embedStrings = ShellInterpolator.embed[String](
-    Case(NewParam, InUnquotedParam) { s => '"'+s.replaceAll("\\\"", "\\\\\"")+'"' },
-    Case(InUnquotedParam, InUnquotedParam) { s => '"'+s.replaceAll("\\\"", "\\\\\"")+'"' },
+    Case(NewParam, InUnquotedParam) { s => "\""+s.replaceAll("\\\"", "\\\\\"")+"\"" },
+    Case(InUnquotedParam, InUnquotedParam) { s => "\""+s.replaceAll("\\\"", "\\\\\"")+"\"" },
     Case(InSingleQuotes, InSingleQuotes) { s => s.replaceAll("'", """'"'"'""") },
     Case(InDoubleQuotes, InDoubleQuotes) { s => s.replaceAll("\\\"", "\\\\\"") }
   )

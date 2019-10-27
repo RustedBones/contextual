@@ -463,6 +463,6 @@ abstract class Verifier[Out] extends Interpolator {
   }
 
   def evaluate(contextual: RuntimeInterpolation): Out =
-    check(contextual.parts.mkString).right.get
+    check(contextual.parts.mkString).toOption.get
 
 }
