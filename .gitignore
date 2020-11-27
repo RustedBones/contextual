@@ -2,7 +2,6 @@
 *.log
 *.swp
 *.swo
-.fury
 .idea
 *~
 **/#*
