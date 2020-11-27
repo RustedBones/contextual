@@ -30,7 +30,7 @@ object Context:
 
     expr.unseal match
       case x as Inlined(_, _, Typed(Repeated(xs, _), y)) =>
-        println(x)
+        
         //println(xs)
     '{"foo"}
 
